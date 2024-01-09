@@ -7,7 +7,7 @@
         // So khớp password trên DB vơi password người dùng cung cấp 
 
         public static function authenticate($conn, $username, $password){
-            $sql = "select * from user where username=:username";
+            $sql = "select * from users where username=:username";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':username', $username, PDO::PARAM_STR);
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
